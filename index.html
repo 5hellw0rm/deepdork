@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepDork - A Dorking Suite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="./r4gh4v & w0lf403">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --primary-glow: #00ff41;
+            --secondary-glow: #008b1f;
+            --text-color: #c7c7c7;
+            --border-radius: 8px;
+            --transition-speed: 0.4s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: linear-gradient(var(--secondary-glow) 1px, transparent 1px), linear-gradient(to right, var(--secondary-glow) 1px, var(--bg-color) 1px);
+            background-size: 40px 40px;
+            color: var(--text-color);
+            font-family: 'VT323', monospace;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5) 1px, transparent 1px, transparent 2px);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 255, 65, 0.1);
+            border-radius: 50%;
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { bottom: -100px; transform: translateX(0); }
+            50% { transform: translateX(100px); }
+            100% { bottom: 100vh; transform: translateX(-100px); }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--primary-glow);
+            text-shadow: 0 0 5px var(--primary-glow), 0 0 15px var(--primary-glow), 0 0 30px var(--secondary-glow);
+            animation: flicker 3s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                0 0 5px var(--primary-glow),
+                0 0 10px var(--primary-glow),
+                0 0 20px var(--primary-glow),
+                0 0 40px var(--secondary-glow),
+                0 0 70px var(--secondary-glow);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+            z-index: 1;
+        }
+
+        .tool-card {
+            background: #050505;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--secondary-glow);
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--primary-glow);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            text-align: center;
+            font-size: 2rem;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 15px var(--secondary-glow), 0 0 30px var(--secondary-glow);
+            background: #0a0a0a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            font-size: 1.2rem;
+            color: var(--secondary-glow);
+            z-index: 1;
+        }
+
+        footer a {
+            color: var(--primary-glow);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bubbles"></div>
+
+    <header>
+        <h1>DeepDork Suite</h1>
+    </header>
+
+    <div class="grid-container">
+        <a href="google_dorks.html" class="tool-card">Google</a>
+        <a href="github_dorks.html" class="tool-card">GitHub</a>
+        <a href="bing_dorks.html" class="tool-card">Bing</a>
+        <a href="duckduckgo_dorks.html" class="tool-card">DuckDuckGo</a>
+        <a href="shodan_dorks.html" class="tool-card">Shodan</a>
+        <a href="fofa_dorks.html" class="tool-card">Fofa</a>
+        <a href="pastebin_dorks.html" class="tool-card">Pastebin</a>
+        <a href="yahoo_dorks.html" class="tool-card">Yahoo</a>
+        <a href="yandex_dorks.html" class="tool-card">Yandex</a>
+    </div>
+
+    <footer>
+        <p>2025 | Created with ❤️ by <a href="https://x.com/ir4gh4v" target="_blank">./r4gh4v</a> & <a href="https://github.com/w0lf403" target="_blank">w0lf403</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bubblesContainer = document.querySelector('.bubbles');
+            const numberOfBubbles = 20;
+
+            for (let i = 0; i < numberOfBubbles; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                const size = Math.random() * 60 + 10 + 'px';
+                bubble.style.width = size;
+                bubble.style.height = size;
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.animationDuration = Math.random() * 5 + 8 + 's';
+                bubble.style.animationDelay = Math.random() * 5 + 's';
+                bubblesContainer.appendChild(bubble);
+            }
+        });
+    </script>
+</body>
+</html>
