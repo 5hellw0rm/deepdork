@@ -1,7 +1,7 @@
 # DeepDork - The Ultimate Search Engine 🚀
 <img src="img/deepdork.jpg" alt="DeepDork" width="800" height="400">
 
-## [Visit DeepDork](https:///cyw0rm.github.io/deepdork/)
+## [Visit DeepDork](https:///5hellw0rm.github.io/deepdork/)
 
 ## 🔍 Introduction
 **DeepDork** is a powerful reconnaissance tool designed for **Google dorking & GitHub dorking** for security researchers, penetration testers, and ethical hackers. DeepDork uses search engine like Google and Github for information gathering, making it effortless to uncover sensitive data and code leaks. Level up dorking with this efficient manual technique—apply custom dorks or experiment with new default keywords.
@@ -16,11 +16,11 @@
 
 🔗 **Check it out** and level up your dorking game!
 
-### `Access Link` - [deepdork](https:///cyw0rm.github.io/deepdork)
+### `Access Link` - [deepdork](https:///5hellw0rm.github.io/deepdork)
 
 ## Usage ✈️
 <img src="img/deepdork.gif" width="1000" height="600"/>
 
-### [Follow on Twitter](https://x.com//cyw0rm)
+### [Follow on Twitter](https://x.com/5hellw0rm)
 
 
